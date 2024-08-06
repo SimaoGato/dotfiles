@@ -166,7 +166,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Open Brave Browser in workspace 2
 bindsym $mod+b workspace $ws2; exec --no-startup-id /usr/bin/brave-browser
 
+# Open Discord in workspace 3
 bindsym $mod+shift+d workspace $ws3; exec --no-startup-id flatpak run com.discordapp.Discord
+
+# Open Flameshot GUI
+bindsym Print exec --no-startup-id flameshot gui
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

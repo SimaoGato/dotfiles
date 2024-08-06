@@ -30,6 +30,8 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -37,6 +39,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id ~/Dotfiles/scripts/set_wallpaper.sh
+
+exec --no-startup-id sh -c "sleep 3 && alacritty"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -158,6 +162,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+
+# Open Brave Browser in workspace 2
+bindsym $mod+b workspace $ws2; exec --no-startup-id /usr/bin/brave-browser
+
+bindsym $mod+shift+d workspace $ws3; exec --no-startup-id flatpak run com.discordapp.Discord
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -193,8 +203,5 @@ client.urgent           #B02A37 #B02A37 #FFFFFF #D32F2F #FFFFFF
 client.placeholder      #1A1A1A #1A1A1A #888888 #2C2C2C #2C2C2C
 
 client.background #FF0000
-
-
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 gaps inner 8px

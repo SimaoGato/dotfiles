@@ -40,7 +40,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id ~/Dotfiles/scripts/set_wallpaper.sh
 
-exec --no-startup-id sh -c "sleep 3 && alacritty"
+exec --no-startup-id sh -c "sleep 2 && alacritty"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -200,13 +200,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# class                 border  bground text    indicator child_border
-client.focused          #3A4E60 #3A4E60 #FFFFFF #4B637B #FFFFFF
-client.focused_inactive #4B637B #4B637B #888888 #5C7A92 #888888
-client.unfocused        #4B637B #4B637B #888888 #5C7A92 #888888
-client.urgent           #B02A37 #B02A37 #FFFFFF #D32F2F #FFFFFF
-client.placeholder      #1A1A1A #1A1A1A #888888 #2C2C2C #2C2C2C
+# Catppuccin Macchiato-inspired theme for i3 config
 
-client.background #FF0000
+# class                 border  bground text    indicator child_border
+client.focused          #CBA6F7 #CBA6F7 #1E1E2E #CBA6F7   #CBA6F7
+client.focused_inactive #6E6C7E #6E6C7E #C3BAC6 #6E6C7E   #6E6C7E
+client.unfocused        #F5C2E7 #F5C2E7 #1E1E2E #F5C2E7   #F5C2E7
+client.urgent           #F28FAD #F28FAD #1E1E2E #F28FAD   #F28FAD
+client.placeholder      #1E1E2E #1E1E2E #C3BAC6 #1E1E2E   #1E1E2E
+client.background       #1E1E2E
 
 gaps inner 8px
+

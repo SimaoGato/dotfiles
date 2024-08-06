@@ -1,6 +1,8 @@
 # Dotfiles
 My 2024 dotfiles (originally made for Fedora 40 i3 spin)
 
+![Environment Look](./assets/terminal-look.png)
+
 ## Install dependencies
 1. For installing zsh, neovim, polybar, git:
 ```sh

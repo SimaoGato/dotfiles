@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack Nerd Font 9
+font pango:Hack Nerd Font 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -40,7 +40,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id ~/Dotfiles/scripts/set_wallpaper.sh
 
-exec --no-startup-id sh -c "sleep 2 && alacritty"
+exec --no-startup-id sh -c "sleep 1 && alacritty"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,8 +57,17 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
-# kill focused window
-bindsym $mod+q kill
+# Kill Discord
+bindsym $mod+shift+q exec --no-startup-id pkill -f discord
+
+# Kill Obsidian
+bindsym $mod+shift+w exec --no-startup-id pkill -f obsidian
+
+
+# Kill the focused window's application
+bindsym $mod+q kill 
+
+bindsym $mod+Shift+x exec betterlockscreen --lock blur
 
 # start dmenu (a program launcher)
 #  bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
@@ -169,6 +178,9 @@ bindsym $mod+b workspace $ws2; exec --no-startup-id /usr/bin/brave-browser
 
 # Open Discord in workspace 3
 bindsym $mod+shift+d workspace $ws3; exec --no-startup-id flatpak run com.discordapp.Discord
+
+# Open Obsidian in workspace 4
+bindsym $mod+shift+o workspace $ws4; exec --no-startup-id flatpak run md.obsidian.Obsidian
 
 # Open Flameshot GUI
 bindsym Print exec --no-startup-id flameshot gui

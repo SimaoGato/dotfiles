@@ -28,5 +28,7 @@ require("lazy").setup({
 	require("plugins.indent-blankline"),
 	require("plugins.misc"),
 	require("plugins.comment"),
+	require("plugins.oil"),
 	require("plugins.harpoon"),
+	require("plugins.rustaceanvim"),
 })

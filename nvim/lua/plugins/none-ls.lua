@@ -38,7 +38,6 @@ return {
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
 			formatting.stylua,
 			formatting.shfmt.with({ args = { "-i", "4" } }),
-			formatting.terraform_fmt,
 			formatting.gofmt, -- Go basic formatter
 			formatting.goimports, -- Go imports formatter
 			formatting.golines.with({ extra_args = { "--max-len=120", "--base-formatter=gofmt" } }), -- Go lines formatter

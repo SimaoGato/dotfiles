@@ -2,7 +2,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+
+vim.keymap.set("n", "<leader>pv", "<cmd>e . <CR>")
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -12,6 +14,10 @@ local opts = { noremap = true, silent = true }
 
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', opts)
+
+-- move selected line / block of text in visual mode up or down
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)

@@ -31,4 +31,5 @@ require("lazy").setup({
 	require("plugins.oil"),
 	require("plugins.harpoon"),
 	require("plugins.rustaceanvim"),
+	require("plugins.fugitive"),
 })
